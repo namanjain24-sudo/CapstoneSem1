@@ -1,0 +1,26 @@
+@media (max-width:560px) {
+    .nav-links{
+        display: none;
+    }
+    nav{
+        justify-content: center;
+    }
+    .gallery-item{
+        max-width: 100%;
+    }
+    .gallery-item img{
+        width: 90%;
+        height: auto;
+    }
+    .welcome{
+        margin: 20px;
+        text-align: center;
+    }
+    .description{
+        text-align: center;
+        font-size: 1rem;
+    }
+    .submit{
+        width: auto;
+    }
+}

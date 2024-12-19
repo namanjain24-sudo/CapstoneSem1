@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    line-height: 1.6;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: black;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: width 0.3s ease;
+    background-color: white;
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-links a::after {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #9c98d1;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d4d1ff;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: black;
+}
+
+.hero h1 {
+    font-size: 6vw;
+    font-weight: bold;
+    line-height: 0.9;
+    animation: fadeIn 1s ease-out;
+    margin-top: 7vh;
+}
+
+.hero-image {
+    max-width: 90%;
+    height: auto;
+    margin-top: 2rem;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgb(10, 10, 10), rgb(26, 26, 26));
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 95vw;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    flex: 1 0 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    animation: fadeIn 0.6s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 45%;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.gallery-item:hover h3 {
+    color: rgb(128, 0, 128);
+}
+
+.discover {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, #000000, #1a0e2a);
+    color: white;
+    min-height: 70vh;
+}
+
+.discover-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.discover-content h2 {
+    font-size: 4vw;
+    line-height: 1.2;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.discover-content p {
+    font-size: 1.2vw;
+    color: #cccccc;
+    line-height: 1.8;
+}
+
+.discover-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.discover-image img {
+    max-height: 50vh;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    height: auto;
+    display: block;
+}
+
+.welcome {
+    text-align: end;
+    margin-top: 10px;
+}
+
+.service {
+    padding: 1rem;
+    background-color: rgb(17, 17, 17);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1.2vw;
+}
+
+.service:hover {
+    background-color: #9c95f3;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px #1d1c2b;
+    font-size: 1.3vw;
+}
+
+.service-head {
+    background: linear-gradient(45deg, rgb(153, 50, 204), rgb(128, 0, 128));
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-content: center;
+}
+
+.service-items {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.description {
+    text-align: center;
+}
+
+.what-i-do {
+    text-align: center;
+}
+
+.wrapper {
+    margin-top: 36px;
+    margin: 42px;
+    width: 94%;
+    max-height: 1900px;
+    display: flex;
+    overflow-x: auto;
+    padding: 0px;
+}
+
+
+.wrapper .item {
+    min-width: 50vw;
+    height: auto;
+    background-color: #000000;
+    margin-right: 29px;
+    padding: 1px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.box {
+    margin-left: -10px;
+}
+
+.Quote-container {
+    color: #ffffff;
+    font-size: 1vw;
+}
+.footer{
+    border-top: 1px solid black;
+    padding: 0px 48px;
+}
+.footer *{
+    font-size: 1rem;
+}
+.first-footer-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 60vh;
+    padding: 10vh 0px;
+}
+.first-footer-div *{
+    margin: 12px 0px;
+}
+.heading{
+    font-size: 32px;
+}
+.number-filler{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.number-filler *{
+    padding: 20px 20px;
+    border-radius: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 1rem;
+    margin: 5px;
+}
+.submit{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px 40px;
+    border-radius: 8px;
+    border: none;
+    width: 30%;
+}
+.second-footer-div{
+    padding: 48px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.follow-btn{
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: #000000;
+}
